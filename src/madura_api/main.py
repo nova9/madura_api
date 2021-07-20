@@ -4,8 +4,6 @@ import sqlite3
 
 from requests.api import get
 
-from vanalize import analize
-
 def load_words():
     with open('words.txt', 'r') as word_file:
         valid_words=set(word_file.read().split())
