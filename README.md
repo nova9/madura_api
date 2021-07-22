@@ -64,7 +64,7 @@ print(result_list)
 ]
 ```
 ---
-# If there is no result, translate function will return a suggestion list inside another list like this,
+# If there is no result, translate function will return False
 
 ## Example 3
 
@@ -74,20 +74,6 @@ from madura_api import translate
 result_list=translate('meen')
 print(result_list)
 ```
-
-*result_list* is a list of lists like this,
-
 ```
-[
-    ['meed'],
-    ['meek'],
-    ['meekness'],
-    ['meerkat'],
-    ['meerschaum'],
-    ['meet'],
-    ['meeting'],
-    ['meeting adjourned'],
-    ['meeting annual general'],
-    ['meeting extraordinary']
-]
+>>> False
 ```
