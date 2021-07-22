@@ -3,10 +3,11 @@
 This is a python module that enables the ability to access madura online dictionary from your python code.
 
 ### Install it
-> pip install madura-api
+```python
+pip install madura-api
+```
 
 ### Use it
-
 ```python
 import madura_api
 result=madura_api.Translate('life')
@@ -22,8 +23,8 @@ print(result.list)
   ['a.', 'දිවිහිම්'],
   ['n.', 'පණ'],
   ['n.', 'පණ ඇති සත්තු'],
-  ['n.', 'ප්\u200dරාණවත්කම'],
-  ['n.', 'ප්\u200dරාණියා'],
+  ['n.', 'ප්‍රාණවත්කම'],
+  ['n.', 'ප්‍රාණියා'],
   ['n.', 'පාණ'],
   ['n.', 'මිනිසුන් ගේ වගතුග'],
   ['Psy.', 'වය'],
