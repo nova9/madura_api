@@ -1,6 +1,6 @@
 ## Welcome to madura_api GitHub Page
 
-This is a python module that enables the ability to access madura online dictionary from your python code.
+This is a python module that can be used to access madura online dictionary from your python code.
 
 ### Install it
 ```python
