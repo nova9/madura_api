@@ -13,18 +13,22 @@ def translate(word:str)->list:
     translate_response=requests.get(f'https://www.maduraonline.com/?find={word}').text
     translate_soup=BeautifulSoup(translate_response, 'lxml') # send requsts response to beautiful soup
 
-    table_data=[]
-    table=translate_soup.table
-    rows = table.find_all('tr')
-    for row in rows:
-        columns=row.find_all('td')
-        columns=[element.text.strip() for element in columns]
-        table_data.append([element for element in columns if element])
+    #Check if there are valid results instead of suggestions
+    if (translate_soup.body.findAll(text='Did you mean?')):
+        return False
+    else:
+        table_data=[]
+        table=translate_soup.table
+        rows = table.find_all('tr')
+        for row in rows:
+            columns=row.find_all('td')
+            columns=[element.text.strip() for element in columns]
+            table_data.append([element for element in columns if element])
 
-    # Make a new list while removing empty two lists at the begining ant the end
-    table_data=[item for item in table_data if item!=[]]
+        # Make a new list while removing empty two lists at the begining ant the end
+        table_data=[item for item in table_data if item!=[]]
 
-    return table_data
+        return table_data
 
 def write(word:str):
     with open('text.txt', 'w') as file:
@@ -48,6 +52,8 @@ def save(word_set:set):
 if __name__=='__main__':
     english_words = load_words()
    
-    print(translate('home'))
+    for word in english_words:
+        print(word)
+        print(translate(word))
 
 
